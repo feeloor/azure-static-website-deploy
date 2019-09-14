@@ -1,0 +1,29 @@
+# action.yml
+name: "Azure Static Website Deploy"
+description: "Deploys code to Azure Storage and enables Static Website"
+inputs:
+  SOURCE_DIR:
+    description: "The name of the directory you want to upload"
+    required: true
+  AZURE_SUBSCRIPTION_ID:
+    description: "Your Azure Subscription ID"
+    required: true
+  AZURE_STORAGE_ACCOUNT_NAME:
+    description: "Your Azure Storage Account Name"
+    required: true
+  AZURE_INDEX_DOCUMENT_NAME:
+    description: "The index document that you specify when you enable static website hosting, appears when users open the site and dont specify a specific file."
+    required: true
+  AZURE_ERROR_DOCUMENT_NAME:
+    description: "If the server returns a 404 error, and you have not specified an error document when you enabled the website, then a default 404 page is returned to the user."
+    required: false
+outputs:
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.SOURCE_DIR }}
+    - ${{ inputs.AZURE_SUBSCRIPTION_ID }}
+    - ${{ inputs.AZURE_STORAGE_ACCOUNT_NAME }}
+    - ${{ inputs.AZURE_INDEX_DOCUMENT_NAME }}
+    - ${{ inputs.AZURE_ERROR_DOCUMENT_NAME }}
