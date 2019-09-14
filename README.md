@@ -37,6 +37,9 @@ jobs:
 | Key | Value | Type | Required |
 | ------------- | ------------- | ------------- | ------------- |
 | `SOURCE_DIR` | The name of the directory you want to upload | `env` | **Yes** |
+| `AZURE_CLIENT_ID` | Your Azure Client ID. | `secret` | **Yes** |
+| `AZURE_SECRET` | Your Azure Secret. | `secret` | **Yes** |
+| `AZURE_TENANT_ID` | Your Azure Tenant ID. | `secret` | **Yes** |
 | `AZURE_SUBSCRIPTION_ID` | Your Azure Subscription ID. | `secret` | **Yes** |
 | `AZURE_STORAGE_ACCOUNT_NAME` | Your Azure Storage Account Name. | `secret` | **Yes** |
 | `AZURE_INDEX_DOCUMENT_NAME` | The index document that you specify when you enable static website hosting, appears when users open the site and don't specify a specific file. [More Information Here](https://docs.microsoft.com/en-US/azure/storage/blobs/storage-blob-static-website#viewing-content) | `env` | **Yes** |
