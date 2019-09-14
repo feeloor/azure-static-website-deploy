@@ -22,6 +22,10 @@ jobs:
       - uses: feeloor/azure-static-website-deploy@master
         env:
           SOURCE_DIR: "./public"
+          AZURE_CLIENT_ID: "<azure-client-id>"
+          AZURE_TENANT_ID: "<azure-tenant-id>"
+          AZURE_SECRET: "<azure-secret>"
+          AZURE_SUBSCRIPTION_ID: "<azure-subscription-id>"
           AZURE_SUBSCRIPTION_ID: "<azure-subscription-id>"
           AZURE_STORAGE_ACCOUNT_NAME: "<azure-storage-account-name>"
           AZURE_INDEX_DOCUMENT_NAME: "<index-document-name>"

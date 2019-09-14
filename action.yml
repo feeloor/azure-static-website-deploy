@@ -8,6 +8,15 @@ inputs:
   SOURCE_DIR:
     description: "The name of the directory you want to upload"
     required: true
+  AZURE_CLIENT_ID:
+    description: "Your Azure Client ID"
+    required: true
+  AZURE_TENANT_ID:
+    description: "Your Azure TENANT ID"
+    required: true
+  AZURE_SECRET:
+    description: "Your Azure Secret"
+    required: true
   AZURE_SUBSCRIPTION_ID:
     description: "Your Azure Subscription ID"
     required: true
@@ -26,6 +35,9 @@ runs:
   image: "Dockerfile"
   args:
     - ${{ inputs.SOURCE_DIR }}
+    - ${{ inputs.AZURE_CLIENT_ID }}
+    - ${{ inputs.AZURE_TENANT_ID }}
+    - ${{ inputs.AZURE_SECRET }}
     - ${{ inputs.AZURE_SUBSCRIPTION_ID }}
     - ${{ inputs.AZURE_STORAGE_ACCOUNT_NAME }}
     - ${{ inputs.AZURE_INDEX_DOCUMENT_NAME }}

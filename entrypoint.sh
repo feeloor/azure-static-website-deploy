@@ -7,6 +7,19 @@ if [ -z "$AZURE_SUBSCRIPTION_ID" ]; then
   exit 1
 fi
 
+if [ -z "$AZURE_CLIENT_ID" ]; then
+  echo "AZURE_CLIENT_ID is not set. Quitting."
+  exit 1
+fi
+if [ -z "$AZURE_SECRET" ]; then
+  echo "AZURE_SECRET is not set. Quitting."
+  exit 1
+fi
+if [ -z "$AZURE_TENANT_ID" ]; then
+  echo "AZURE_TENANT_ID is not set. Quitting."
+  exit 1
+fi
+
 if [ -z "$AZURE_STORAGE_ACCOUNT_NAME" ]; then
   echo "AZURE_STORAGE_ACCOUNT_NAME is not set. Quitting."
   exit 1
@@ -21,6 +34,9 @@ if [ -z "$SOURCE_DIR" ]; then
   echo "SOURCE_DIR is not set. Quitting."
   exit 1
 fi
+
+# Login
+az login --service-principal --username ${AZURE_CLIENT_ID} --password ${AZURE_SECRET} --tenant ${AZURE_TENANT_ID}
 
 # Set subscription id
 az account set --subscription ${AZURE_SUBSCRIPTION_ID}
