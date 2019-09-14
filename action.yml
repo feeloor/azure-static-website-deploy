@@ -1,6 +1,9 @@
 # action.yml
 name: "Azure Static Website Deploy"
 description: "Deploys code to Azure Storage and enables Static Website"
+branding:
+  icon: "box"
+  color: "green"
 inputs:
   SOURCE_DIR:
     description: "The name of the directory you want to upload"
