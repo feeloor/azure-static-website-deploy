@@ -26,7 +26,6 @@ jobs:
           AZURE_TENANT_ID: "<azure-tenant-id>"
           AZURE_SECRET: "<azure-secret>"
           AZURE_SUBSCRIPTION_ID: "<azure-subscription-id>"
-          AZURE_SUBSCRIPTION_ID: "<azure-subscription-id>"
           AZURE_STORAGE_ACCOUNT_NAME: "<azure-storage-account-name>"
           AZURE_INDEX_DOCUMENT_NAME: "<index-document-name>"
           AZURE_ERROR_DOCUMENT_NAME: "<error-document-name>"
