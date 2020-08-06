@@ -1,4 +1,4 @@
-FROM microsoft/azure-cli
+FROM mcr.microsoft.com/azure-cli
 
 LABEL "com.github.actions.name"="Deploy repo to Azure Storage"
 LABEL "com.github.actions.description"="Deploys code to Azure Storage and enables Static Website"

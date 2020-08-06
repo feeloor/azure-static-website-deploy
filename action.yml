@@ -29,7 +29,6 @@ inputs:
   AZURE_ERROR_DOCUMENT_NAME:
     description: "If the server returns a 404 error, and you have not specified an error document when you enabled the website, then a default 404 page is returned to the user."
     required: false
-outputs:
 runs:
   using: "docker"
   image: "Dockerfile"
