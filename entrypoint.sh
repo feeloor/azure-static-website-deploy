@@ -49,4 +49,9 @@ else
 fi
 
 # Upload source to storage
-az storage blob upload-batch -s ${SOURCE_DIR} -d \$web --account-name ${AZURE_STORAGE_ACCOUNT_NAME}
+if [ "$FORCE_OVERWRITE" = 'true' ]; then
+  echo "Using overwrite mode"
+  az storage blob upload-batch -s ${SOURCE_DIR} -d \$web --account-name ${AZURE_STORAGE_ACCOUNT_NAME} --overwrite
+else
+  az storage blob upload-batch -s ${SOURCE_DIR} -d \$web --account-name ${AZURE_STORAGE_ACCOUNT_NAME}
+fi
