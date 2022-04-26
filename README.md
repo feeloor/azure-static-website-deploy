@@ -29,6 +29,7 @@ jobs:
           AZURE_STORAGE_ACCOUNT_NAME: "<azure-storage-account-name>"
           AZURE_INDEX_DOCUMENT_NAME: "<index-document-name>"
           AZURE_ERROR_DOCUMENT_NAME: "<error-document-name>"
+          FORCE_OVERWRITE: "true"
 ```
 
 ### Required Variables
@@ -43,6 +44,8 @@ jobs:
 | `AZURE_STORAGE_ACCOUNT_NAME` | Your Azure Storage Account Name. | `secret` | **Yes** |
 | `AZURE_INDEX_DOCUMENT_NAME` | The index document that you specify when you enable static website hosting, appears when users open the site and don't specify a specific file. [More Information Here](https://docs.microsoft.com/en-US/azure/storage/blobs/storage-blob-static-website#viewing-content) | `env` | **Yes** |
 | `AZURE_ERROR_DOCUMENT_NAME` | If the server returns a 404 error, and you have not specified an error document when you enabled the website, then a default 404 page is returned to the user. [More Information Here](https://docs.microsoft.com/en-US/azure/storage/blobs/storage-blob-static-website#viewing-content) | `secret` | **No** |
+| `FORCE_OVERWRITE` | If the uploaded file already exists, by default the AZ CLI (since March 2022) will **not** uploads the file. It is possible to force the upload. [More Information Here](https://github.com/Azure/azure-cli/issues/21477) | `env` | **No** |
+
 
 
 ## License
